@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        <tbody>
+            {%for detail in details%}
+                <tr>
+                    <td>{{detail.symbol}}</td>
+                    <td>{{detail.shares}}</td>
+                    <td>{{detail.price}}</td>
+                    <td>{{detail.transacted}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+        </thead>
+    </table>
+{% endblock %}
